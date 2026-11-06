@@ -14,6 +14,7 @@ export const MOBILE_PLACEMENT = Object.freeze({
 
 export const APP_ROUTE = Object.freeze({
   ROOT: "/",
+  COUCH: "/couch",
   PLAY: "/game",
   ARMORY: "/armory",
   SHOP: "/shop",

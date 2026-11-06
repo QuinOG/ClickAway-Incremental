@@ -1,5 +1,6 @@
 import { lazy, useCallback, useEffect, useState } from "react"
-import { Navigate, Route, Routes } from "react-router-dom"
+import { Navigate, Route, Routes, useLocation } from "react-router-dom"
+import SpareChangePage from "./features/spareChange/SpareChangePage.jsx"
 import { MotionConfig } from "motion/react"
 
 import { isValidModeId } from "./app/appAccountStateHelpers.js"
@@ -58,6 +59,12 @@ function SessionLoadingScreen() {
 }
 
 export default function App() {
+  const { pathname } = useLocation()
+  if (pathname.replace(/\/+$/, "") === APP_ROUTE.COUCH) return <SpareChangePage />
+  return <MainApp />
+}
+
+function MainApp() {
   const { preferences } = useFeedbackPreferences()
   const [gamePhase, setGamePhase] = useState(ROUND_PHASE.READY)
   const {

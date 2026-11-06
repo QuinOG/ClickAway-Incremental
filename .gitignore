@@ -28,3 +28,4 @@ test-results/playwright
 server/data/*.db
 server/data/*.db-shm
 server/data/*.db-wal
+.agent-tasks/
